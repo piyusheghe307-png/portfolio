@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Piyush Eghe | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;500;400&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background: linear-gradient(120deg, #2176ae 0%, #ffbe40 140%);
+      color: #262626;
+      min-height: 100vh;
+    }
+    nav {
+      position: fixed;
+      width: 100vw;
+      left: 0; top: 0;
+      background: rgba(255,255,255,0.97);
+      box-shadow: 0 2px 18px #d4840130;
+      z-index: 99;
+      padding: 0 6vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .nav-logo {
+      font-size: 1.30em;
+      color: #14213d;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      padding: 13px 0;
+      text-decoration: none;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      text-transform: uppercase;
+    }
+    .nav-links { display: flex; gap: 2vw; }
+    .nav-links a {
+      color: #14213d;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.07em;
+      padding-bottom: 6px;
+      transition: color 0.16s, border-color 0.18s;
+      border-bottom: 2.3px solid transparent;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .nav-links a.active, .nav-links a:hover {
+      color: #fca311;
+      border-bottom: 2.3px solid #fca311;
+      background: none;
+    }
+    @media (max-width:700px) {
+      nav { padding:0 2vw;}
+      .nav-logo { font-size:1em;}
+      .nav-links { gap: 2vw;}
+    }
+    @media (max-width:480px) {
+      nav { padding:0 1vw;}
+      .nav-logo { font-size:1em;}
+    }
+    .section {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 42px 14px 21px 14px;
+      scroll-margin-top: 65px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .hero-section {
+      display: flex;
+      align-items:center;
+      gap: 25px;
+      margin-top: 67px;
+      flex-wrap: wrap;
+      min-height: 180px;
+      padding-bottom: 12px;
+    }
+    .hero-img-outer {
+      border-radius: 50%;
+      background: linear-gradient(140deg, #2176ae 24%, #fca311 100%);
+      padding: 5px;
+      width: 85px;
+      height: 85px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      animation: circle-rotate 5s linear infinite;
+      box-shadow: 0 0 18px #fca31175;
+    }
+    @keyframes circle-rotate { 100% { transform: rotate(360deg);}}
+    .hero-img-inner {
+      background: #fff;
+      border-radius: 50%;
+      width: 68px;
+      height:68px;
+      display:flex;align-items:center;justify-content:center;
+      overflow:hidden;
+      border:2px solid #fca311;
+      box-shadow:0 0 11px #fca31144;
+    }
+    .hero-img-inner img {
+      width:100%;height:100%;object-fit:cover;display:block;
+    }
+    .hero-details { flex:1; min-width: 135px;}
+    .hero-title {
+      font-size: 1.48em;
+      font-weight:800;
+      margin-bottom:2px;
+      letter-spacing:1.1px;
+      background: linear-gradient(90deg,#2176ae 45%,#fca311 88%);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+      text-transform: uppercase;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .hero-role {
+      color: #fca311;
+      font-size: 1em;
+      margin-bottom: 5px;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .hero-badges {
+      margin-bottom: 5px; 
+    }
+    .badge {
+      display: inline-block;
+      background:linear-gradient(90deg,#2176ae 60%,#fca311 100%);
+      color: #fff;
+      font-size: .84em;
+      font-weight: 700;
+      border-radius: 8px;
+      margin-right: 7px;
+      padding: 2px 11px 2px 10px;
+      letter-spacing: 0.01em;
+      box-shadow:0 2px 8px #fca31126;
+      vertical-align: middle;
+      text-transform: uppercase;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .hero-quote {
+      font-style:italic;
+      color:#fca311;
+      margin-bottom: 2px;
+      font-size:.97em;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-weight: 600;
+    }
+    .hero-socials {
+      margin-top:8px;
+      display:flex;gap:12px;
+    }
+    .hero-socials a {
+      color:#fca311;
+      font-size:1.28em;
+      transition: color 0.17s;
+      text-decoration: none;
+    }
+    .hero-socials a:hover { color: #2176ae; }
+    .hero-fact {
+      margin-top:8px;
+      color:#2176ae;
+      font-size:.94em;
+      font-style:italic;
+      border-left: 4px solid #fca311;
+      padding-left: 12px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .section-title {
+      color:#14213d;
+      font-size:1.11em;
+      font-weight:800;
+      margin-bottom:3px;
+      margin-top:14px;
+      letter-spacing:0.12px;
+      display:flex;align-items:center;gap:7px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      text-transform: uppercase;
+    }
+    .section-underline {
+      width:38px;height:2.6px;
+      background:linear-gradient(90deg,#fca311 46%,#2176ae 100%);
+      border-radius:2px; margin-bottom:7px; opacity: 0.72;
+    }
+    .skills-list {
+      display:flex;flex-wrap:wrap;gap:7px;
+      margin: 4px 0 4px 0;
+    }
+    .skill {
+      background:#fca31126;
+      color: #14213d;
+      font-weight:700;
+      padding:4px 15px;
+      border-radius:16px;
+      font-size:1.04em;
+      border: 1px solid #ffe2b1da;
+      box-shadow:0 1.5px 4px #faefdf11;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .skill:hover {
+      background: #2176ae;
+      color: #fff;
+      border: 1px solid #2176ae;
+    }
+    .tech-list { display:flex;flex-wrap:wrap;gap:7px; margin:4px 0 4px 0;}
+    .tech {
+      background: #fffbe1;
+      color:#fca311;
+      font-size:1.02em;
+      border-radius:7px;
+      padding:5px 13px 5px 11px;
+      border:1.7px solid #fca31165;
+      display:inline-flex;
+      align-items:center;
+      gap:5px;
+      font-weight:700;
+      margin-bottom:3px;
+      box-shadow:0 2px 7px #fca31113;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .tech i { font-size:1.08em; color:#2176ae;}
+    .projects-grid { display: flex; flex-wrap: wrap; gap: 13px; margin-top:4px;}
+    .project-card {
+      background: #fff;
+      border-radius:13px;
+      box-shadow:0 1.7px 9px #ffbe409c;
+      padding:10px 15px;
+      width:185px; max-width:97vw;
+      border-left:4px solid #fca311;
+      cursor:pointer;
+      font-size:1.01em;
+      transition: box-shadow 0.11s, transform 0.11s;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .project-card:hover {
+      box-shadow:0 7px 17px #2176ae32;
+      transform:translateY(-3px) scale(1.033);
+      background:#ffe5bf;
+    }
+    .project-title {
+      color:#2176ae;
+      font-size:1.05em;
+      font-weight:800;
+      margin-bottom:2px;
+      text-transform: uppercase;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .project-desc {
+      color:#fca311;
+      font-size:.97em;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-weight: 600;
+    }
+    .ach-list { margin-top:2px; color:#fca311;}
+    .ach-list li {
+      font-size:1em;
+      margin-bottom:.7em;
+      list-style: "🏆 ";
+      padding-inline-start: .18em;
+      font-weight:700;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .edu-list { margin-top:2px; color: #14213d;}
+    .edu-list li {
+      font-size:.99em;
+      margin-bottom: .53em;
+      list-style: "🎓 ";
+      padding-inline-start: .15em;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .contact-card {
+      background: linear-gradient(88deg,#2176ae 50%, #fca311 100%);
+      color:#fff;
+      border-radius:13px;
+      box-shadow:0 2px 25px #2176ae31;
+      padding:13px 13px;
+      max-width:260px;
+      margin:8px auto 0 auto;
+      align-items:center;
+      font-size: 1.03em;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .contact-links{
+      margin-top:7px;display:flex;gap:7px;justify-content:center;flex-wrap:wrap;
+    }
+    .contact-link {
+      font-size:1.08em;
+      color: #fff;
+      background: #fca311da;
+      padding:5px 18px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:800;
+      transition: background 0.13s, color 0.11s;
+      margin-top:3px;
+      border:1.7px solid transparent;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    .contact-link:hover { background: #fff; color: #2176ae; border:1.7px solid #fca311;}
+    .footer {
+      text-align:center;
+      color:#14213d;
+      padding:13px 0 9px 0;
+      font-size:.94em;
+      letter-spacing:0.5px;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    @media (max-width: 650px) {
+      .section {max-width:97vw;}
+      .hero-section{gap:3vw;}
+      .projects-grid{gap:1vw;}
+    }
+    @media (max-width:500px) {
+      .section {padding-left:2vw;padding-right:2vw;}
+      .project-card{padding: 6px 2px;}
+      .tech {font-size:.98em;}
+      nav {padding-left:1vw;padding-right:1vw;}
+      .hero-section{flex-direction:column;gap:8px;text-align:center;}
+      .hero-img-outer{margin:0 auto;}
+    }
+  </style>
+</head>
+<body>
+  <!-- ========== NAVBAR ========== -->
+  <nav>
+    <a href="#" class="nav-logo"><i class="fa-solid fa-bolt"></i> Piyush Eghe</a>
+    <div class="nav-links">
+      <a href="#about" class="active">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#technology">Tech Tools</a>
+      <a href="#projects">Projects</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ========== HERO / ABOUT SECTION ========== -->
+  <section id="about" class="section hero-section">
+    <div class="hero-img-outer">
+      <div class="hero-img-inner">
+        <img src="https://ui-avatars.com/api/?name=Piyush+Eghe&background=2176ae&color=fff&size=150" alt="Piyush Eghe">
+      </div>
+    </div>
+    <div class="hero-details">
+      <div class="hero-title">Piyush Vitthal Eghe</div>
+      <div class="hero-role"><i class="fa-solid fa-user-graduate" style="color:#fca311;font-size:1.03em"></i> 1st Year Engineering Student</div>
+      <div class="hero-badges">
+        <span class="badge"><i class="fa-solid fa-users"></i> IIoT Innovators Lead</span>
+        <span class="badge" style="background:linear-gradient(90deg,#fca311 50%,#2176ae 100%);">Ideathon Winner</span>
+      </div>
+      <div class="hero-quote">"Learning, leading, and innovating every day."</div>
+      <div class="hero-socials">
+        <a href="mailto:piyusheghe307@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="tel:9359211306" title="Mobile"><i class="fa-solid fa-phone"></i></a>
+        <a href="https://linkedin.com/in/piyusheghe/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://instagram.com/_official_piyush_06" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      <div class="hero-fact">
+        <i class="fa-solid fa-microchip"></i> Passionate about smart tech, automation, and digital innovation.
+      </div>
+    </div>
+  </section>
+  <!-- ========== SKILLS SECTION ========== -->
+  <section id="skills" class="section">
+    <div class="section-title"><i class="fa-solid fa-person-rays"></i> Skills</div>
+    <div class="section-underline"></div>
+    <div class="skills-list">
+      <div class="skill">Presentation</div>
+      <div class="skill">Public Speaking</div>
+      <div class="skill">Communication</div>
+      <div class="skill">Team Leadership</div>
+      <div class="skill">Event Coordination</div>
+      <div class="skill">Problem Solving</div>
+      <div class="skill">Innovative Thinking</div>
+      <div class="skill">Quick Learner</div>
+    </div>
+  </section>
+  <!-- ========== TECHNOLOGY TOOLS SECTION ========== -->
+  <section id="technology" class="section">
+    <div class="section-title"><i class="fa-solid fa-robot"></i> Technology/Tools</div>
+    <div class="section-underline"></div>
+    <div class="tech-list">
+      <div class="tech"><i class="fa-solid fa-bolt"></i> IoT & IIoT</div>
+      <div class="tech"><i class="fa-brands fa-raspberry-pi"></i> Arduino/Raspberry Pi</div>
+      <div class="tech"><i class="fa-solid fa-code"></i> C/C++</div>
+      <div class="tech"><i class="fa-brands fa-python"></i> Python</div>
+      <div class="tech"><i class="fa-solid fa-shield-halved"></i> Security Concepts</div>
+      <div class="tech"><i class="fa-solid fa-cloud"></i> Cloud Tools Use</div>
+      <div class="tech"><i class="fa-solid fa-brain"></i> AI/ML Basics</div>
+      <div class="tech"><i class="fa-solid fa-screwdriver-wrench"></i> Innovation DIY</div>
+    </div>
+  </section>
+  <!-- ========== PROJECTS SECTION ========== -->
+  <section id="projects" class="section">
+    <div class="section-title"><i class="fa-solid fa-diagram-project"></i> Projects</div>
+    <div class="section-underline"></div>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-title">Gamified Learning</div>
+        <div class="project-desc">Learning with games, quizzes & interactive modules.</div>
+      </div>
+      <div class="project-card">
+        <div class="project-title">Mini Security System</div>
+        <div class="project-desc">Safety prototype for campus security & awareness.</div>
+      </div>
+      <div class="project-card">
+        <div class="project-title">Smart Waste Segregator <span style="font-size:0.96em;color:#fca311;">(Idea)</span></div>
+        <div class="project-desc">Automation for keeping campus clean & green.</div>
+      </div>
+      <div class="project-card">
+        <div class="project-title">IIoT Demo App <span style="color:#2176ae;font-size:.98em;">(Learning)</span></div>
+        <div class="project-desc">Testing IoT dashboards & sensor display (Arduino/RPi).</div>
+      </div>
+    </div>
+  </section>
+  <!-- ========== ACHIEVEMENTS SECTION ========== -->
+  <section id="achievements" class="section">
+    <div class="section-title"><i class="fa-solid fa-trophy"></i> Achievements</div>
+    <div class="section-underline"></div>
+    <ul class="ach-list">
+      <li>1st Rank - Inter College Ideathon Winner</li>
+      <li>IIoT Innovators Group Leader</li>
+      <li>Selected as College Event Organizer</li>
+      <li>Project displayed at Tech Fest</li>
+    </ul>
+  </section>
+  <!-- ========== EDUCATION SECTION ========== -->
+  <section id="education" class="section">
+    <div class="section-title"><i class="fa-solid fa-user-graduate"></i> Education</div>
+    <div class="section-underline"></div>
+    <ul class="edu-list">
+      <li>B.E. Engineering (1st Year), 2024-2025</li>
+      <li>Active in tech & innovation events</li>
+      <li>Passed Class 12th (PCM), 2024</li>
+    </ul>
+  </section>
+  <!-- ========== CONTACT SECTION ========== -->
+  <section id="contact" class="section">
+    <div class="section-title"><i class="fa-solid fa-envelope-open-text"></i> Contact</div>
+    <div class="section-underline"></div>
+    <div class="contact-card">
+      <div style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:1em;margin-bottom:2px;font-weight:700;">Let's Connect!</div>
+      <div><b>Email:</b> piyusheghe307@gmail.com</div>
+      <div><b>Phone:</b> 9359211306</div>
+      <div class="contact-links" style="margin-top:4px;">
+        <a class="contact-link" href="mailto:piyusheghe307@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        <a class="contact-link" href="tel:9359211306"><i class="fa-solid fa-phone"></i></a>
+        <a class="contact-link" href="https://linkedin.com/in/piyusheghe/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a class="contact-link" href="https://instagram.com/_official_piyush_06" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+  </section>
+  <div class="footer">&copy; 2025 Piyush Vitthal Eghe • Blue & Orange Theme • Made for Tech & Innovation Shine</div>
+  <script>
+    // Navbar active link highlight
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = ['about', 'skills', 'technology', 'projects', 'achievements', 'education', 'contact'];
+    window.addEventListener('scroll', () => {
+      let found = false;
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const sec = document.getElementById(sections[i]);
+        if(window.scrollY + 70 >= sec.offsetTop) {
+          navLinks.forEach(l=>l.classList.remove('active'));
+          navLinks[i].classList.add('active');
+          found = true;
+          break;
+        }
+      }
+      if (!found) navLinks.forEach(l=>l.classList.remove('active'));
+    });
+    navLinks.forEach((a, i) =>
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        document.getElementById(sections[i]).scrollIntoView({behavior:"smooth"});
+      })
+    );
+  </script>
+</body>
+</html>
